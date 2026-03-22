@@ -1,33 +1,30 @@
-import { useState } from "react";
 import "./App.css";
 
 import QuizCard from "./components/ui/quizCard";
 
-
+import { Link } from "react-router";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   const quizzes = [
     {
       id: 1,
       title: "CSS",
       description: "This is a brief description of Quiz 1.",
-      route: "/quiz-css",
+      route: "/quiz/css",
       icon: "iconFileTypeCss",
     },
     {
       id: 2,
       title: "JavaScript",
       description: "This is a brief description of Quiz 2.",
-      route: "/quiz-javascript",
+      route: "/quiz/javascript",
       icon: "iconBrandJavascript",
     },
     {
       id: 3,
       title: "ReactJS",
       description: "This is a brief description of Quiz 3.",
-      route: "/quiz-react",
+      route: "/quiz/react",
       icon: "iconBrandReact",
     },
   ];
@@ -44,12 +41,13 @@ function App() {
       </div>
       <div className="quiz-cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {quizzes.map((quiz) => (
-          <QuizCard
-            key={quiz.id}
-            icon={quiz.icon}
-            title={quiz.title}
-            description={quiz.description}
-          />
+          <Link key={quiz.id} to={quiz.route}>
+            <QuizCard
+              title={quiz.title}
+              description={quiz.description}
+              icon={quiz.icon}
+            />
+          </Link>
         ))}
       </div>
     </div>
