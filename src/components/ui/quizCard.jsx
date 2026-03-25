@@ -1,13 +1,14 @@
 import {
   IconFileTypeCss,
   IconBrandJavascript,
-  IconBrandReact,
+  IconCheckupLis,
+  IconCheckupList,
 } from "@tabler/icons-react";
 
 const icons = {
   iconFileTypeCss: IconFileTypeCss,
   iconBrandJavascript: IconBrandJavascript,
-  iconBrandReact: IconBrandReact,
+  iconCheckupList: IconCheckupList,
 };
 
 export default function QuizCard({ title, description, icon }) {

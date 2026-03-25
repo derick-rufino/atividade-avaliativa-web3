@@ -6,7 +6,7 @@ import "./index.css";
 import App from "./App.jsx";
 import QuizCss from "./routes/quizCss.jsx";
 import QuizJavascript from "./routes/quizJavascript.jsx";
-import QuizReact from "./routes/quizReact.jsx";
+import Results from "./routes/results.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -15,8 +15,8 @@ createRoot(document.getElementById("root")).render(
         <Route path="/" element={<App />} />
         <Route path="/quiz/css" element={<QuizCss />} />
         <Route path="/quiz/javascript" element={<QuizJavascript />} />
-        <Route path="/quiz/react" element={<QuizReact />} />
+        <Route path="/quiz/results" element={<Results />} />
       </Routes>
     </BrowserRouter>
-  </StrictMode>,
+  </StrictMode>
 );

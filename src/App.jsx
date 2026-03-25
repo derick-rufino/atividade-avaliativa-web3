@@ -22,10 +22,10 @@ function App() {
     },
     {
       id: 3,
-      title: "ReactJS",
-      description: "This is a brief description of Quiz 3.",
-      route: "/quiz/react",
-      icon: "iconBrandReact",
+      title: "Resultados",
+      description: "Veja os resultados dos quizzes respondidos",
+      route: "/quiz/results",
+      icon: "iconCheckupList",
     },
   ];
 
