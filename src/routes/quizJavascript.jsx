@@ -95,7 +95,7 @@ export default function QuizJavascript() {
   const [answers, setAnswers] = useState({});
 
   return (
-    <div className="quiz-javascript p-8 bg-slate-950 min-h-dvh">
+    <div className="quiz-javascript py-8 px-16 bg-slate-950 min-h-dvh">
       <header>
         <BackButton />
         <h1 className="text-3xl font-bold text-slate-50 mb-2 flex items-center gap-6">

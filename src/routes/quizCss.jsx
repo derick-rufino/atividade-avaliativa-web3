@@ -84,11 +84,12 @@ export default function QuizCSS() {
   const [answers, setAnswers] = useState({});
 
   return (
-    <div className="quiz-css p-8 bg-slate-950 min-h-dvh">
+    <div className="quiz-css py-8 px-16 bg-slate-950 min-h-dvh">
       <header>
         <BackButton />
         <h1 className="text-3xl font-bold text-slate-50 mb-2 flex items-center gap-6">
-          Quiz CSS <IconFileTypeCss className="inline text-purple-500 scale-150" />
+          Quiz CSS{" "}
+          <IconFileTypeCss className="inline text-purple-500 scale-150" />
         </h1>
         <p className="text-slate-400">
           Teste seus conhecimentos sobre de estilização
