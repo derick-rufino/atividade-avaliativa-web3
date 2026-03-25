@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import QuestionCard from "../components/ui/questionCard";
 import { IconFileTypeCss } from "@tabler/icons-react";
+import BackButton from "../components/ui/backButton";
 
 export default function QuizCSS() {
   const questions = [
@@ -85,8 +86,9 @@ export default function QuizCSS() {
   return (
     <div className="quiz-css p-8 bg-slate-950 min-h-dvh">
       <header>
-        <h1 className="text-3xl font-bold text-slate-50 mb-2">
-          Quiz CSS <IconFileTypeCss className="inline text-purple-500" />
+        <BackButton />
+        <h1 className="text-3xl font-bold text-slate-50 mb-2 flex items-center gap-6">
+          Quiz CSS <IconFileTypeCss className="inline text-purple-500 scale-150" />
         </h1>
         <p className="text-slate-400">
           Teste seus conhecimentos sobre de estilização

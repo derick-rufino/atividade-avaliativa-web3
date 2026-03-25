@@ -1,6 +1,7 @@
 import { useState } from "react";
 import QuestionCard from "../components/ui/questionCard";
 import { IconBrandJavascript } from "@tabler/icons-react";
+import BackButton from "../components/ui/backButton";
 
 export default function QuizJavascript() {
   const questions = [
@@ -96,9 +97,10 @@ export default function QuizJavascript() {
   return (
     <div className="quiz-javascript p-8 bg-slate-950 min-h-dvh">
       <header>
-        <h1 className="text-3xl font-bold text-slate-50 mb-2">
-          Quiz JavaScript{" "}
-          <IconBrandJavascript className="inline text-amber-300" />
+        <BackButton />
+        <h1 className="text-3xl font-bold text-slate-50 mb-2 flex items-center gap-6">
+          Quiz JavaScript
+          <IconBrandJavascript className="inline text-amber-300 scale-150" />
         </h1>
         <p className="text-slate-400">
           Teste seus conhecimentos sobre JavaScript

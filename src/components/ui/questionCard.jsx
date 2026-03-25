@@ -1,9 +1,8 @@
-import { useNavigate } from "react-router";
 
 export default function QuestionCard({ q, selected, onAnswer }) {
   return (
     <div
-      className="question mb-6 bg-slate-800 p-6 rounded-xl min-w-150 max-w-150 flex flex-col gap-5"
+      className="question mb-6 bg-slate-800 p-6 rounded-xl min-w-150 max-w-150 flex flex-col gap-5 relative pb-24"
       id={`q${q.id}`}
     >
       <h2 className="text-xl font-semibold text-slate-50">{q.question}</h2>
@@ -32,7 +31,7 @@ export default function QuestionCard({ q, selected, onAnswer }) {
         ))}
       </ul>
       <button
-        className="bg-cyan-600 hover:opacity-70 text-slate-900 font-semibold py-2 px-8 rounded-lg transition-colors w-fit self-end cursor-pointer"
+        className="bg-cyan-600 hover:opacity-70 text-slate-900 font-semibold py-2 px-8 rounded-lg transition-colors w-fit self-end cursor-pointer absolute bottom-6 right-6"
         onClick={() =>
           document.getElementById(`q${q.id + 1}`)?.scrollIntoView({
             behavior: "smooth",
