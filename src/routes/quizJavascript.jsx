@@ -1,9 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import QuestionCard from "../components/ui/questionCard";
 import { IconBrandJavascript } from "@tabler/icons-react";
 import BackButton from "../components/ui/backButton";
 
 export default function QuizJavascript() {
+  const [answers, setAnswers] = useState(() => {
+    try {
+      const saved = localStorage.getItem("quiz-javascript-answers");
+      return saved ? JSON.parse(saved) : {};
+    } catch {
+      return {};
+    }
+  });
+
+  useEffect(() => {
+    localStorage.setItem("quiz-javascript-answers", JSON.stringify(answers));
+  }, [answers]);
+
   const questions = [
     {
       id: 1,
@@ -91,8 +104,6 @@ export default function QuizJavascript() {
       correct: "b",
     },
   ];
-
-  const [answers, setAnswers] = useState({});
 
   return (
     <div className="quiz-javascript py-8 px-16 bg-slate-950 min-h-dvh">

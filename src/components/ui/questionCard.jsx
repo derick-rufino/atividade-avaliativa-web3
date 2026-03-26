@@ -1,5 +1,20 @@
+import { useNavigate } from "react-router";
 
 export default function QuestionCard({ q, selected, onAnswer }) {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    if (q.id < 5) {
+      document.getElementById(`q${q.id + 1}`)?.scrollIntoView({
+        behavior: "smooth",
+        inline: "start",
+        block: "nearest",
+      });
+    } else {
+      navigate("/results");
+    }
+  };
+
   return (
     <div
       className="question mb-6 bg-slate-800 p-6 rounded-xl min-w-150 max-w-150 flex flex-col gap-5 relative pb-24"
@@ -32,13 +47,7 @@ export default function QuestionCard({ q, selected, onAnswer }) {
       </ul>
       <button
         className="bg-cyan-600 hover:opacity-70 text-slate-900 font-semibold py-2 px-8 rounded-lg transition-colors w-fit self-end cursor-pointer absolute bottom-6 right-6"
-        onClick={() =>
-          document.getElementById(`q${q.id + 1}`)?.scrollIntoView({
-            behavior: "smooth",
-            inline: "start",
-            block: "nearest",
-          })
-        }
+        onClick={handleClick}
       >
         {q.id < 5 ? "Próximo" : "Finalizar"}
       </button>

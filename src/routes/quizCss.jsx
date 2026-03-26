@@ -1,10 +1,24 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import QuestionCard from "../components/ui/questionCard";
 import { IconFileTypeCss } from "@tabler/icons-react";
 import BackButton from "../components/ui/backButton";
 
 export default function QuizCSS() {
+
+  const [answers, setAnswers] = useState(() => {
+    try {
+      const saved = localStorage.getItem("quiz-css-answers");
+      return saved ? JSON.parse(saved) : {};
+    } catch {
+      return {};
+    }
+  });
+
+  useEffect(() => {
+    localStorage.setItem("quiz-css-answers", JSON.stringify(answers));
+  }, [answers]);
+
   const questions = [
     {
       id: 1,
@@ -80,8 +94,6 @@ export default function QuizCSS() {
       correct: "c",
     },
   ];
-
-  const [answers, setAnswers] = useState({});
 
   return (
     <div className="quiz-css py-8 px-16 bg-slate-950 min-h-dvh">

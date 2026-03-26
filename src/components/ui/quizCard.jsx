@@ -1,7 +1,6 @@
 import {
   IconFileTypeCss,
   IconBrandJavascript,
-  IconCheckupLis,
   IconCheckupList,
 } from "@tabler/icons-react";
 
